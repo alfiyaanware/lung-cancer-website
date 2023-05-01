@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request
 import pickle
 import pandas as pd
+import numpy as np
+# import cv2
 import sklearn
 from sklearn.preprocessing import MinMaxScaler
+from PIL import Image
 
 app = Flask(__name__)
 
@@ -55,7 +58,15 @@ def result():
 
 @app.route("/imageresult", methods=['POST'])
 def imageresult():
-  return render_template('imageresult.html')
+  file = request.files['scan']
+  img = Image.open(file.stream)
+  img = img.resize((256, 256))
+  img_array = np.array(img)
+  img_array = img_array / 255.0
+  knn = pickle.load(open('knn.pkl', 'rb'))
+  prediction = knn.predict(img_array)
+
+  return render_template('imageresult.html', prediction=prediction)
 
 
 if __name__ == "__main__":

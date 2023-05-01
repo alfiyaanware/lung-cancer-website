@@ -82,6 +82,24 @@ optional = false
 python-versions = ">=3.8"
 
 [[package]]
+name = "opencv-python"
+version = "4.7.0.72"
+description = "Wrapper package for OpenCV python bindings."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+numpy = [
+    {version = ">=1.21.2", markers = "python_version >= \"3.10\""},
+    {version = ">=1.21.4", markers = "python_version >= \"3.10\" and platform_system == \"Darwin\""},
+    {version = ">=1.22.0", markers = "python_version >= \"3.11\""},
+    {version = ">=1.19.3", markers = "python_version >= \"3.6\" and platform_system == \"Linux\" and platform_machine == \"aarch64\" or python_version >= \"3.9\""},
+    {version = ">=1.17.0", markers = "python_version >= \"3.7\""},
+    {version = ">=1.17.3", markers = "python_version >= \"3.8\""},
+]
+
+[[package]]
 name = "pandas"
 version = "2.0.1"
 description = "Powerful data structures for data analysis, time series, and statistics"
@@ -120,6 +138,18 @@ spss = ["pyreadstat (>=1.1.2)"]
 sql-other = ["SQLAlchemy (>=1.4.16)"]
 test = ["hypothesis (>=6.34.2)", "pytest (>=7.0.0)", "pytest-xdist (>=2.2.0)", "pytest-asyncio (>=0.17.0)"]
 xml = ["lxml (>=4.6.3)"]
+
+[[package]]
+name = "pillow"
+version = "9.5.0"
+description = "Python Imaging Library (Fork)"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-inline-tabs", "sphinx-removed-in", "sphinxext-opengraph"]
+tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
 name = "python-dateutil"
@@ -217,7 +247,7 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "34fe9eccce83f0340b5dff8d938ede58c746cb94b6372d5ed2510e51759b4110"
+content-hash = "9d094923e54d08e1d76a9c78cbd59063544e009fff5202b50005c1b1ad055631"
 
 [metadata.files]
 click = []
@@ -228,7 +258,9 @@ jinja2 = []
 joblib = []
 markupsafe = []
 numpy = []
+opencv-python = []
 pandas = []
+pillow = []
 python-dateutil = []
 pytz = []
 scikit-learn = []
