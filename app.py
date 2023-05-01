@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import numpy as np
 import pickle
 import pandas as pd
-from sklearn.preprocessing import MinMaxScaler
+# from sklearn.preprocessing import MinMaxScaler
 
 app = Flask(__name__)
 
