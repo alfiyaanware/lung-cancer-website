@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/mystyle.css">
+  
+</head>
+<body>
+
+    {% include 'nav.html' %}
+    <br>
+    <h1 style="text-align:center">Prognostic Lung Cancer Prediction</h1>
+    
+    <br>
+    <br> <h5 style="margin-left:70px;">Please enter your details below to generate result: </h5><br>
+    <form action="/results" method="POST">
+        Age:
+        <input type="number" name="age" id="age">
+        <br>
+      <br><br>
+      <label for="gender">Gender:</label>
+      <select name="gender" id="gender">
+        <option value="0">Male</option>
+        <option value="1">Female</option>
+      </select>
+      
+        <br><br>
+        <label for="smoking">Do you Smoke?:</label>
+      <select name="smoking" id="smoking">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+        
+        <br><br>
+
+        <u>On a scale of 1-10:</u><br>
+
+        <br> How bad is the air pollution in your area: <br>
+        <select name="air-pollution" id="air-pollution">
+        {% include 'slider.html' %}
+        </select>
+
+        <br> How much alcohol do you consume: <br>
+        <select name="alcohol-use" id="alcohol-use">
+        {% include 'slider.html' %}
+        </select>
+      
+        <br> Level of dust allergy: <br>
+        <select name="dust-allergy" id="dust-allergy">
+        {% include 'slider.html' %}
+        </select>
+
+        <br> Would you say you have a balanced diet: <br>
+        <select name="balanced-diet" id="balanced-diet">
+        {% include 'slider.html' %}
+        </select>
+
+        <br>Severity of chest pain: <br>
+        <select name="chest-pain" id="chest-pain">
+        {% include 'slider.html' %}
+        </select>
+
+        <br> Occupational Risks: <br>
+        <select name="occupational-hazards" id="occupational-hazards">
+        {% include 'slider.html' %}
+        </select>
+
+        <br> Genetic Risks: <br>
+          <select name="genetic-risk" id="genetic-risk">
+        {% include 'slider.html' %}
+        </select>
+
+        <br> Chronic Lung Disease Severity: <br>
+          <select name="chronic-lung-disease" id="chronic-lung-disease">
+        {% include 'slider.html' %}
+        </select>
+
+        <br> Are you a Passive Smoker?: <br>
+          <select name="passive-smoker" id="passive-smoker">
+        {% include 'slider.html' %}
+        </select>
+
+        <br> Coughing Of Blood: <br>
+          <select name="coughing-of-blood" id="coughing-of-blood">
+        {% include 'slider.html' %}
+        </select>
+
+        <br> Fatigue: <br>
+          <select name="fatigue" id="fatigue">
+        {% include 'slider.html' %}
+        </select>
+
+        <br> Severity of Weight Loss experienced (if any): <br>
+          <select name="weight-loss" id="weight-loss">
+        {% include 'slider.html' %}
+        </select>
+
+        <br> Shortness of Breath: <br>
+          <select name="shortness-of-breath" id="shortness-of-breath">
+        {% include 'slider.html' %}
+        </select>
+
+        <br> Wheezing: <br>
+          <select name="wheezing" id="wheezing">
+        {% include 'slider.html' %}
+        </select>
+      
+        <br> Swallowing Difficulty: <br>
+          <select name="swallowing-difficulty" id="swallowing-difficulty">
+        {% include 'slider.html' %}
+        </select>
+
+        <br> Clubbing of Finger Nails: <br>
+          <select name="clubbing-of-finger-nails" id="clubbing-of-finger-nails">
+        {% include 'slider.html' %}
+        </select>
+
+        <br> How frequent is your Cold? <br>
+          <select name="frequent-cold" id="frequent-cold">
+        {% include 'slider.html' %}
+        </select>
+      
+        <br> Dry Cough:<br>
+          <select name="dry-cough" id="dry-cough">
+        {% include 'slider.html' %}
+        </select>
+
+        <br> Snoring: <br>
+          <select name="snoring" id="snoring">
+        {% include 'slider.html' %}
+        </select>
+      
+        <br> Enter BMI: <input type="text" name="obesity" id="obesity" value="0"><br><br>
+        <a href="https://www.calculator.net/bmi-calculator.html?ctype=metric&cage=22&csex=f&cheightfeet=5&cheightinch=10&cpound=160&cheightmeter=150&ckg=44&printit=0&x=32&Y=11" target="_blank">You can calculate your BMI here!</a>        
+        
+        <br><br>
+      <input class="btn btn-info" type="submit" value="Submit">
+    </form>
+  <br><br><br>
+    
+  
+  {% include 'footer.html' %}
+</body>
+</html>
