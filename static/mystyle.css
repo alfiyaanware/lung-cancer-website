@@ -1,0 +1,24 @@
+body{
+    background-color: #b9e9eb;
+  }
+ul, ol {
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+  }
+form{
+    margin-right: 150px;
+    margin-left: 80px;
+}
+datalist {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(104, 46, 46);
+  width: 11.7%;
+}
+#footer {
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   height: 60px;  
+}
