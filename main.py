@@ -34,7 +34,6 @@ def detect():
 
 @app.route('/results', methods=['POST'])
 def result():
-  # if request.method == 'POST':
   to_predict_list = request.form.to_dict()
   copy = request.form.to_dict()
   # to_predict_list = list(to_predict_list)
@@ -52,6 +51,11 @@ def result():
   result = lr.predict(new_input_df)[0]
 
   return render_template('results.html', prediction=result, dict=copy)
+
+
+@app.route("/imageresult", methods=['POST'])
+def imageresult():
+  return render_template('imageresult.html')
 
 
 if __name__ == "__main__":
